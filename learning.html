@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>PokECG - Learning Pokédex</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/learning.css">
+</head>
+<body class="learning-page">
+
+<!-- PANTALLA DE CARGA -->
+<div id="pokedexLoading" class="pokedex-loading active">
+    <div class="pokedex-gif-wrapper">
+        <img src="Images/ui/Gift_pokedex.gif" class="pokedex-gif" alt="Pokédex">
+    </div>
+    <p>LOADING POKÉDEX...</p>
+</div>
+
+<!-- GRID DE CARTAS -->
+<div id="pokedexGrid" class="pokedex-grid">
+    <h1 class="pokedex-title">📖 POKÉDEX — CARDIAC PATHOLOGIES</h1>
+    <div class="cards-container" id="cardsContainer"></div>
+</div>
+
+<!-- Música Pokédex (solo durante loading) -->
+<audio id="pokedexMusic" loop>
+    <source src="Audio_Pokemon/pokedex-theme.mp3" type="audio/mpeg">
+</audio>
+
+<!-- Audio de patologías -->
+<audio id="pathologyAudio" preload="none"></audio>
+
+<script src="js/data.js"></script>
+<script src="js/ecg.js"></script>
+<script src="js/learning.js"></script>
+</body>
+</html>

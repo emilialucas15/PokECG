@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>PokECG - Heart Disease Prediction</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/prediction.css">
+</head>
+<body class="prediction-page">
+
+<div class="prediction-container">
+    <h2 class="prediction-title">▶ STATS ANALYSIS: HEART DISEASE PREDICTION</h2>
+
+    <div class="grid-2col">
+        <div class="form-panel">
+
+            <!-- ===== SECTION 1: DEMOGRAPHICS ===== -->
+            <div class="form-section">
+                <h3 class="section-title">👤 Demographics</h3>
+                <div class="form-grid">
+                    <div class="input-group">
+                        <label>Age</label>
+                        <select id="p_age">
+                            <option value="25">Young (under 40)</option>
+                            <option value="50" selected>Adult (40-60)</option>
+                            <option value="70">Senior (over 60)</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label>Sex</label>
+                        <select id="p_sex">
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== SECTION 2: ECG PARAMETERS ===== -->
+            <div class="form-section">
+                <h3 class="section-title">💓 ECG Parameters</h3>
+                <div class="form-grid">
+                    <div class="input-group">
+                        <label>Heart Rate (bpm)</label>
+                        <select id="p_hr">
+                            <option value="30">Very Low (under 40)</option>
+                            <option value="50">Low (40-60)</option>
+                            <option value="75" selected>Normal (60-100)</option>
+                            <option value="130">High (100-150)</option>
+                            <option value="180">Very High (over 150)</option>
+                            <option value="0">Zero (VFib)</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label>QRS Duration (ms)</label>
+                        <select id="p_qrs">
+                            <option value="90" selected>Normal (under 120)</option>
+                            <option value="130">Wide (over 120)</option>
+                            <option value="160">Very Wide (over 150)</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label>R-R Interval</label>
+                        <select id="p_rr">
+                            <option value="Regular">Regular</option>
+                            <option value="Irregular">Irregular</option>
+                            <option value="Irregularly Irregular">Irregularly Irregular</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label>QRS Width</label>
+                        <select id="p_qrswidth">
+                            <option value="Narrow">Narrow</option>
+                            <option value="Wide">Wide</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label>P Wave</label>
+                        <select id="p_pwave">
+                            <option value="Normal">Normal</option>
+                            <option value="Inverted">Inverted</option>
+                            <option value="Absent">Absent</option>
+                            <option value="Sawtooth">Sawtooth</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label>AV Conduction</label>
+                        <select id="p_avconduction">
+                            <option value="Normal">Normal</option>
+                            <option value="1° AVB">1° AVB (PR &gt; 200 ms)</option>
+                            <option value="2° AVB Type I">2° AVB Type I (Wenckebach)</option>
+                            <option value="2° AVB Type II">2° AVB Type II (Mobitz II)</option>
+                            <option value="2° AVB 2:1">2° AVB 2:1</option>
+                            <option value="3° AVB">3° AVB (Complete)</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label>Pacing Spike</label>
+                        <select id="p_pacing">
+                            <option value="No">No</option>
+                            <option value="Atrial">Atrial</option>
+                            <option value="Ventricular">Ventricular</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== SECTION 3: CARDIOVASCULAR ===== -->
+            <div class="form-section">
+                <h3 class="section-title">❤️ Cardiovascular</h3>
+                <div class="form-grid">
+                    <div class="input-group">
+                        <label>Systolic BP (mmHg)</label>
+                        <select id="p_sbp">
+                            <option value="110">Normal (under 120)</option>
+                            <option value="130" selected>Elevated (120-140)</option>
+                            <option value="160">High (over 140)</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label>Diastolic BP (mmHg)</label>
+                        <select id="p_dbp">
+                            <option value="70">Normal (under 80)</option>
+                            <option value="85" selected>Elevated (80-90)</option>
+                            <option value="100">High (over 90)</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label>Cholesterol (mg/dL)</label>
+                        <select id="p_chol">
+                            <option value="180" selected>Normal (under 200)</option>
+                            <option value="220">Borderline (200-240)</option>
+                            <option value="260">High (over 240)</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label>Smoker</label>
+                        <select id="p_smoke">
+                            <option value="No">No</option>
+                            <option value="Yes">Yes</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== SECTION 4: MEDICAL HISTORY ===== -->
+            <div class="form-section">
+                <h3 class="section-title">🏥 Medical History</h3>
+                <div class="form-grid">
+                    <div class="input-group">
+                        <label>Thyroid (TSH)</label>
+                        <select id="p_thyroid">
+                            <option value="Normal">Normal</option>
+                            <option value="High">High (Hypothyroidism)</option>
+                            <option value="Low">Low (Hyperthyroidism)</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label>Medications</label>
+                        <select id="p_medications">
+                            <option value="None">None</option>
+                            <option value="Beta-blockers">Beta-blockers</option>
+                            <option value="Digoxin">Digoxin</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label>BMI</label>
+                        <select id="p_bmi">
+                            <option value="Normal">Normal (under 25)</option>
+                            <option value="Overweight">Overweight (25-30)</option>
+                            <option value="Obese">Obese (over 30)</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== SECTION 5: LIFESTYLE ===== -->
+            <div class="form-section">
+                <h3 class="section-title">🏃 Lifestyle</h3>
+                <div class="checkbox-grid">
+                    <label class="checkbox-item">
+                        <input type="checkbox" id="p_athlete">
+                        <span>Athlete (Vagal Tone)</span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" id="p_apnea">
+                        <span>Sleep Apnea</span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" id="p_alcohol">
+                        <span>Heavy Alcohol</span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" id="p_stress">
+                        <span>High Stress</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- ===== SECTION 6: SYMPTOMS ===== -->
+            <div class="form-section">
+                <h3 class="section-title">🩺 Symptoms</h3>
+                <div class="checkbox-grid">
+                    <label class="checkbox-item">
+                        <input type="checkbox" id="p_fever">
+                        <span>Fever</span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" id="p_anemia">
+                        <span>Anemia</span>
+                    </label>
+                </div>
+            </div>
+
+            <button class="pokemon-predict-btn" id="predictBtn">⚡ ANALYZE STATS</button>
+            <button class="pokemon-predict-btn reset-btn" id="resetBtn">🔄 RESET</button>
+        </div>
+
+        <div class="result-panel" id="resultBox">
+            <h3>▶ CORONARY RISK STATS</h3>
+
+            <div class="overall-risk-box">
+                <p><strong>Overall Risk:</strong> <span id="res-level">AWAITING</span></p>
+            </div>
+
+            <div class="dual-risk">
+                <div class="risk-item">
+                    <strong>🫀 Arrhythmia Severity</strong>
+                    <span id="res-arrhythmia">—</span>
+                </div>
+                <div class="risk-item">
+                    <strong>👤 CV Risk (10yr)</strong>
+                    <span id="res-cv">—</span>
+                </div>
+            </div>
+
+            <p><strong>Reason:</strong> <span id="res-reason">Fill parameters and press ANALYZE STATS.</span></p>
+            <p><strong>Diagnosis:</strong> <span id="res-diag">—</span></p>
+            <p><strong>Definition:</strong> <span id="res-def">—</span></p>
+
+            <div id="res-associated">
+                <p><strong>Associated Conditions:</strong> —</p>
+            </div>
+
+            <p><strong>Recommendation:</strong> <span id="res-rec">—</span></p>
+            <p><strong>Treatment:</strong> <span id="res-treat">—</span></p>
+
+            <div class="ecg-monitor">
+                <img id="miniEcgGif" src="Images/Gift_Patologia/Sinus Rhythm.gif" alt="ECG">
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/ecg.js"></script>
+<script src="js/prediction.js"></script>
+</body>
+</html>

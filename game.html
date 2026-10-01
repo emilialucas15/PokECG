@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>PokECG - Game</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/game.css">
+</head>
+<body class="game-page">
+
+<!-- ESCENA 1: INTRO DE OAK -->
+<div id="scene-intro" class="scene active">
+    <img src="Images/characters/Lab_Oak.jpeg" class="oak-img" alt="Professor Oak">
+    <div class="dialogue-box" id="oakDialogue">
+        <p id="oakText"></p>
+        <div id="nameInputContainer" style="display:none; margin-top:15px;">
+            <input type="text" id="playerName" placeholder="Your name..." maxlength="10">
+            <button id="nameOkBtn">OK</button>
+        </div>
+    </div>
+</div>
+
+<!-- ESCENA 2: CENTRO POKÉMON EXTERIOR -->
+<div id="scene-center-exterior" class="scene">
+    <img src="Images/backgrounds/centro_medico_exterior.jpeg" id="centerExteriorBg" alt="Pokemon Center Outside">
+    <div class="outside-dialogue">
+        <p id="outsideText">Welcome to the Pokémon Center. Press ENTER to enter.</p>
+    </div>
+</div>
+
+<!-- ESCENA 3: CENTRO POKÉMON INTERIOR (JOY) -->
+<div id="scene-center" class="scene">
+    <div id="centerContainer">
+        <img src="Images/backgrounds/centro_medico_interior.jpeg" id="centerBg" alt="Pokemon Center Inside">
+        <div class="nurse-dialogue" id="nurseDialogue">
+            <p id="nurseText"></p>
+            <button id="nurseOkBtn" style="display:none;">OK</button>
+        </div>
+    </div>
+</div>
+
+<!-- ESCENA 4: MAPA DEL BOSQUE -->
+<div id="scene-map" class="scene">
+    <div id="mapContainer">
+        <img src="Images/backgrounds/forest.jpeg" id="mapBg" alt="Forest">
+        <div id="pokemonLayer"></div>
+        <img src="Images/characters/Ash_down.png" id="playerSprite" alt="Player">
+
+        <!-- 🏆 BOTÓN WIN (arriba al centro, sin tapar Pokémon) -->
+        <button id="winShortcutBtn" class="win-shortcut" onclick="goToTrophy()">
+            🏆 WIN
+        </button>
+    </div>
+    <div class="hud">
+        <div class="hud-item">📍 <span id="hudLocation">Forest</span></div>
+        <div class="hud-item">🔴 <span id="hudCount">0 / 27</span></div>
+    </div>
+</div>
+
+<!-- ESCENA 5: BATALLA -->
+<div id="scene-battle" class="scene">
+    <img src="Images/backgrounds/battle.jpeg" id="battleBg" alt="Battle">
+
+    <div class="battle-top">
+        <div class="hp-box enemy-hp">
+            <div class="hp-name" id="enemyName">???</div>
+            <div class="hp-bar"><div class="hp-fill" style="width:100%"></div></div>
+        </div>
+    </div>
+
+    <div class="battle-bottom">
+        <div class="hp-box player-hp">
+            <div class="hp-name">Pikachu</div>
+            <div class="hp-bar"><div class="hp-fill" style="width:100%"></div></div>
+        </div>
+    </div>
+
+    <img src="Images/gen1/1pikachu.png" id="playerBattleSprite" alt="Pikachu">
+    <div class="player-name-label">PIKACHU</div>
+
+    <div class="enemy-ecg-box">
+        <div class="ecg-frame">
+            <img id="battleEcgGif" src="" alt="ECG">
+        </div>
+    </div>
+
+    <div class="battle-dialogue">
+        <p id="battleQuestion">What pathology does this ECG show?</p>
+        <div id="battleOptions"></div>
+    </div>
+</div>
+
+<!-- ESCENA 6: TROFEO -->
+<div id="scene-trophy" class="scene">
+    <img src="Images/ui/Throphy.png" id="trophyImg" alt="Trophy">
+    <h2>🎉 CONGRATULATIONS! 🎉</h2>
+    <p class="trophy-count">🔴 27 / 27 Pokémon Captured</p>
+    <p id="trophyName" class="trophy-name"></p>
+    <button onclick="window.location.href='menu.html'">BACK TO MENU</button>
+</div>
+
+<!-- AUDIOS -->
+<audio id="labMusic"    loop><source src="Audio_Pokemon/lab-theme.mp3"    type="audio/mpeg"></audio>
+<audio id="routeMusic"  loop><source src="Audio_Pokemon/route-theme.mp3"  type="audio/mpeg"></audio>
+<audio id="centerMusic" loop><source src="Audio_Pokemon/center-theme.mp3" type="audio/mpeg"></audio>
+<audio id="battleMusic" loop><source src="Audio_Pokemon/battle-theme.mp3" type="audio/mpeg"></audio>
+<audio id="winMusic"><source src="Audio_Pokemon/win-theme.mp3"   type="audio/mpeg"></audio>
+<audio id="loseMusic"><source src="Audio_Pokemon/lose-theme.mp3" type="audio/mpeg"></audio>
+<audio id="trophyMusic"><source src="Audio_Pokemon/trophy-theme.mp3" type="audio/mpeg"></audio>
+
+<!-- Audio de patología (aac) -->
+<audio id="pathologyAudio" preload="none"></audio>
+
+<script src="js/data.js"></script>
+<script src="js/ecg.js"></script>
+<script src="js/game.js"></script>
+</body>
+</html>

@@ -1,0 +1,110 @@
+Listado de rutas de carpetas
+El número de serie del volumen es 7062-7F1B
+C:.
+¦   estructura.txt
+¦   
++---Audio_ECG
+¦       1.m4a
+¦       10.m4a
+¦       11.m4a
+¦       2.m4a
+¦       3.m4a
+¦       4.m4a
+¦       5.m4a
+¦       6.m4a
+¦       7.m4a
+¦       8.m4a
+¦       9.m4a
+¦       
++---Audio_Pokemon
+¦       battle-theme.mp3
+¦       center-theme.mp3
+¦       lab-theme.mp3
+¦       lose-theme.mp3
+¦       menu-theme.mp3
+¦       pokedex-theme.mp3
+¦       route-theme.mp3
+¦       trophy-theme.mp3
+¦       win-theme.mp3
+¦       
++---Images
+¦   +---backgrounds
+¦   ¦       battle.jpeg
+¦   ¦       centro_medico_exterior.jpeg
+¦   ¦       centro_medico_interior.jpeg
+¦   ¦       forest.jpeg
+¦   ¦       
+¦   +---characters
+¦   ¦       Ash_down.jpeg
+¦   ¦       Ash_left.jpeg
+¦   ¦       Ash_right.jpeg
+¦   ¦       Ash_up.jpeg
+¦   ¦       Lab_Oak.jpeg
+¦   ¦       
+¦   +---gen1
+¦   ¦       10lapras.png
+¦   ¦       11growlithe.png
+¦   ¦       12clefairy.png
+¦   ¦       13dragonair.png
+¦   ¦       14hypno.png
+¦   ¦       15flareon.png
+¦   ¦       16charmeleon.png
+¦   ¦       17alakazam.png
+¦   ¦       18exeggutor.png
+¦   ¦       19slowbro.png
+¦   ¦       1pikachu.png
+¦   ¦       20poliwhirl.png
+¦   ¦       21seaking.png
+¦   ¦       22wigglytuff.png
+¦   ¦       23blastoise.png
+¦   ¦       24exeggcute.png
+¦   ¦       25fearow.png
+¦   ¦       26golduck.png
+¦   ¦       27dragonite.png
+¦   ¦       2slowpoke.png
+¦   ¦       3jolteon.png
+¦   ¦       4eevee.png
+¦   ¦       5abra.png
+¦   ¦       6snorlax.png
+¦   ¦       7raichu.png
+¦   ¦       8arcanine.png
+¦   ¦       9gengar.png
+¦   ¦       
+¦   +---Gift_Patologia
+¦   ¦       2° AVB 2 1.gif
+¦   ¦       2° AVB Type I.gif
+¦   ¦       2° AVB Type II.gif
+¦   ¦       3° AV Block.gif
+¦   ¦       Accelerated IVR.gif
+¦   ¦       Accelerated Junctional.gif
+¦   ¦       Atrial Fibrillation.gif
+¦   ¦       Atrial Flutter.gif
+¦   ¦       Idioventricular Rhythm.gif
+¦   ¦       Junctional Rhythm.gif
+¦   ¦       Junctional Tachycardia.gif
+¦   ¦       NSR with 1° AVB.gif
+¦   ¦       NSR with PAC.gif
+¦   ¦       NSR with PJC.gif
+¦   ¦       NSR with PVC.gif
+¦   ¦       Paced Atrial.gif
+¦   ¦       Paced Ventricular.gif
+¦   ¦       Sinus Arrest.gif
+¦   ¦       Sinus Arrhythmia.gif
+¦   ¦       Sinus Bradycardia.gif
+¦   ¦       Sinus Exit Block.gif
+¦   ¦       Sinus Rhythm.gif
+¦   ¦       Sinus Tachycardia.gif
+¦   ¦       Supraventricular Tachycardia.gif
+¦   ¦       Ventricular Fibrillation.gif
+¦   ¦       Ventricular Tachycardia.gif
+¦   ¦       Wandering Pacemaker.gif
+¦   ¦       
+¦   +---ui
+¦           Gift_pokedex.gif
+¦           Pokeball.jpeg
+¦           Throphy.jpeg
+¦           
++---videos
+        intro.mp4
+        menu.mp4
+        

@@ -1,0 +1,458 @@
+/* ============================================================
+   PokECG — Game Styles (FIXED)
+   ============================================================ */
+
+.game-page {
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+/* ===== ESCENAS ===== */
+.scene {
+    display: none;
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+}
+.scene.active {
+    display: block;
+}
+
+/* ===== ESCENA 1: INTRO OAK ===== */
+.oak-img {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.dialogue-box {
+    position: absolute;
+    left: 4%;
+    top: 72%;
+    width: 92%;
+    height: 24%;
+    background: #f0f0e0;
+    border: 4px solid #4a4a4a;
+    border-radius: 8px;
+    padding: 20px 30px;
+    font-size: 14px;
+    color: #333;
+    line-height: 1.8;
+    overflow: hidden;
+    z-index: 10;
+    box-sizing: border-box;
+}
+
+#playerName {
+    font-family: inherit;
+    font-size: 12px;
+    padding: 8px 12px;
+    border: 3px solid #333;
+    border-radius: 6px;
+    background: #fff;
+    margin-right: 10px;
+}
+
+#nameOkBtn {
+    font-family: inherit;
+    font-size: 10px;
+    padding: 10px 20px;
+    background: #c64b39;
+    color: #fff;
+    border: 3px solid #333;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* ===== ESCENA 2: CENTRO EXTERIOR ===== */
+#centerExteriorBg {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.outside-dialogue {
+    position: absolute;
+    left: 10%;
+    bottom: 10%;
+    width: 80%;
+    background: #f0f0e0;
+    border: 4px solid #4a4a4a;
+    border-radius: 8px;
+    padding: 20px;
+    color: #333;
+    font-size: 12px;
+    line-height: 1.8;
+    z-index: 10;
+    text-align: center;
+}
+
+/* ===== ESCENA 3: CENTRO INTERIOR ===== */
+#centerContainer {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+
+#centerBg {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.nurse-dialogue {
+    position: absolute;
+    left: 10%;
+    bottom: 10%;
+    width: 80%;
+    background: #f0f0e0;
+    border: 4px solid #4a4a4a;
+    border-radius: 8px;
+    padding: 20px;
+    color: #333;
+    font-size: 12px;
+    line-height: 1.8;
+    z-index: 10;
+}
+
+.nurse-dialogue button {
+    margin-top: 15px;
+    font-family: inherit;
+    padding: 10px 25px;
+    background: #c64b39;
+    color: #fff;
+    border: 3px solid #333;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* ===== ESCENA 4: MAPA DEL BOSQUE ===== */
+#mapContainer {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+
+#mapBg {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+#playerSprite {
+    position: absolute;
+    width: 64px;
+    height: 88px;
+    image-rendering: pixelated;
+    transition: all 0.1s;
+    z-index: 10;
+}
+
+#pokemonLayer {
+    position: absolute;
+    inset: 0;
+    z-index: 5;
+}
+
+.map-pokemon {
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    image-rendering: pixelated;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.map-pokemon:hover {
+    transform: scale(1.2);
+}
+
+.map-pokemon.caught {
+    opacity: 0.3;
+    filter: grayscale(1);
+}
+
+.hud {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: rgba(0,0,0,0.85);
+    border: 3px solid #ffe84d;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 11px;
+    color: #ffe84d;
+    z-index: 20;
+}
+
+.hud-item {
+    margin: 5px 0;
+}
+
+/* ===== BOTÓN WIN (SHORTCUT) ===== */
+.win-shortcut {
+    position: absolute;
+    top: 5%;
+    left: 45%;
+    padding: 12px 20px;
+    background: linear-gradient(135deg, #ffd700, #ff8c00);
+    border: 4px solid #333;
+    border-radius: 10px;
+    font-family: "Press Start 2P", monospace;
+    font-size: 10px;
+    color: #fff;
+    text-shadow: 2px 2px #000;
+    cursor: pointer;
+    box-shadow: 0 5px 0 #8b4513, 0 0 20px rgba(255, 215, 0, 0.6);
+    animation: winPulse 1.5s infinite;
+    z-index: 100;
+    transition: transform 0.1s;
+}
+
+.win-shortcut:hover {
+    filter: brightness(1.15);
+}
+
+.win-shortcut:active {
+    transform: translateY(5px);
+    box-shadow: 0 0 0 #8b4513;
+}
+
+@keyframes winPulse {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 5px 0 #8b4513, 0 0 20px rgba(255, 215, 0, 0.6);
+    }
+    50% {
+        transform: scale(1.08);
+        box-shadow: 0 5px 0 #8b4513, 0 0 40px rgba(255, 215, 0, 1);
+    }
+}
+
+/* ===== ESCENA 5: BATALLA ===== */
+#battleBg {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.battle-top {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    z-index: 3;
+}
+
+.battle-bottom {
+    position: absolute;
+    bottom: 30%;
+    right: 5%;
+    z-index: 3;
+}
+
+.hp-box {
+    background: #f0f0e0;
+    border: 4px solid #333;
+    border-radius: 8px;
+    padding: 10px 15px;
+    width: 280px;
+}
+
+.hp-name {
+    font-size: 10px;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.hp-bar {
+    height: 12px;
+    background: #999;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.hp-fill {
+    height: 100%;
+    background: #38a169;
+}
+
+#playerBattleSprite {
+    position: absolute;
+    left: 10%;
+    bottom: 18%;
+    width: 360px;
+    image-rendering: pixelated;
+    z-index: 4;
+}
+
+.player-name-label {
+    position: absolute;
+    right: 5%;
+    bottom: 28%;
+    font-size: 14px;
+    color: #ffe84d;
+    text-shadow: 3px 3px #000;
+    z-index: 5;
+}
+
+.enemy-ecg-box {
+    position: absolute;
+    right: 5%;
+    top: 10%;
+    z-index: 4;
+}
+
+.ecg-frame {
+    position: relative;
+    background: #0b0f19;
+    border: 6px solid #ffe84d;
+    border-radius: 10px;
+    padding: 10px;
+    width: 380px;
+    height: 260px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ecg-frame img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.battle-dialogue {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #f0f0e0;
+    border-top: 6px solid #333;
+    padding: 20px 30px;
+    color: #333;
+    z-index: 10;
+}
+
+#battleQuestion {
+    font-size: 12px;
+    margin-bottom: 15px;
+}
+
+#battleOptions {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.option-btn {
+    font-family: inherit;
+    font-size: 9px;
+    padding: 12px 8px;
+    background: #fff;
+    color: #333;
+    border: 3px solid #333;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s;
+    line-height: 1.4;
+}
+
+.option-btn:hover {
+    background: #ffe84d;
+}
+
+.option-btn.correct {
+    background: #38a169;
+    color: #fff;
+    border-color: #38a169;
+}
+
+.option-btn.wrong {
+    background: #c64b39;
+    color: #fff;
+    border-color: #c64b39;
+}
+
+/* ===== ESCENA 6: TROFEO (FONDO NEGRO) ===== */
+#scene-trophy {
+    background: #000000;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+#scene-trophy.active {
+    display: flex;
+}
+
+#trophyImg {
+    width: 200px;
+    image-rendering: pixelated;
+    margin-bottom: 30px;
+    background: transparent;
+    filter: drop-shadow(0 0 30px rgba(255, 215, 0, 0.5));
+}
+
+#scene-trophy h2 {
+    color: #ffe84d;
+    font-size: 18px;
+    margin-bottom: 25px;
+    text-shadow: 3px 3px #000;
+}
+
+.trophy-count {
+    font-size: 14px;
+    margin: 15px 0;
+    color: #ffe84d;
+    text-shadow: 2px 2px #000;
+    letter-spacing: 2px;
+}
+
+.trophy-name {
+    font-size: 16px;
+    margin: 15px 0 25px 0;
+    color: #ffffff;
+    text-shadow: 3px 3px #000;
+    letter-spacing: 2px;
+}
+
+#scene-trophy button {
+    margin-top: 30px;
+    font-family: inherit;
+    padding: 15px 40px;
+    background: #c64b39;
+    color: #fff;
+    border: 4px solid #ffe84d;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 11px;
+    letter-spacing: 2px;
+    box-shadow: 0 5px 0 #551a1a;
+    transition: all 0.1s;
+}
+
+#scene-trophy button:active {
+    transform: translateY(5px);
+    box-shadow: 0 0 0 #551a1a;
+}

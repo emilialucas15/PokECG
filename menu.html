@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>PokECG - Menu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="menu-page">
+
+<div id="video-container">
+    <video id="menuVideo" autoplay loop playsinline>
+        <source src="videos/menu.mp4" type="video/mp4">
+    </video>
+
+    <div class="menu-overlay">
+        <button class="menu-btn" data-action="game"
+                style="top: 41%; left: 14%; width: 28%; height: 7.5%;">
+            GAME
+        </button>
+        <button class="menu-btn" data-action="learning"
+                style="top: 51%; left: 14%; width: 28%; height: 7.5%;">
+            LEARNING
+        </button>
+        <button class="menu-btn" data-action="prediction"
+                style="top: 61%; left: 14%; width: 28%; height: 13%;">
+            HEART DISEASE PREDICTION
+        </button>
+        <button class="menu-btn" data-action="settings"
+                style="top: 77%; left: 14%; width: 28%; height: 7.5%;">
+            SETTINGS
+        </button>
+    </div>
+</div>
+
+<!-- MODAL SETTINGS -->
+<div id="settingsModal" class="settings-modal">
+    <div class="settings-box">
+        <h2>⚙️ SETTINGS</h2>
+
+        <div class="setting-item">
+            <label>🔊 Master Volume</label>
+            <input type="range" id="volumeSlider" min="0" max="100" value="70">
+            <span id="volumeValue">70%</span>
+        </div>
+
+        <div class="setting-item">
+            <label>☀️ Brightness</label>
+            <input type="range" id="brightnessSlider" min="70" max="150" value="100">
+            <span id="brightnessValue">100%</span>
+        </div>
+
+        <button id="closeSettingsBtn" class="close-btn">CLOSE</button>
+    </div>
+</div>
+
+<script src="js/menu.js"></script>
+</body>
+</html>

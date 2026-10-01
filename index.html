@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>PokECG - Start</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="cover-page">
+
+<div id="cover">
+    <video id="introVideo" autoplay muted loop playsinline>
+        <source src="videos/intro.mp4" type="video/mp4">
+    </video>
+</div>
+
+<audio id="introMusic" loop preload="auto">
+    <source src="Audio_Pokemon/intro-theme.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+// ===== ESTADO =====
+let musicStarted = false;
+
+// ===== REPRODUCIR MÚSICA =====
+function playMusic() {
+    const music = document.getElementById("introMusic");
+    if (!music) return;
+
+    music.volume = 0.7;
+    music.currentTime = 0;
+    music.play().catch(err => console.log("Audio error:", err));
+    musicStarted = true;
+}
+
+// ===== ACTIVAR (primera interacción) =====
+function activateMusic() {
+    if (musicStarted) return;
+    playMusic();
+}
+
+// ===== IR AL MENÚ =====
+function goToMenu() {
+    window.location.href = "menu.html";
+}
+
+// ===== TECLADO =====
+document.addEventListener("keydown", (e) => {
+    if (!musicStarted) {
+        activateMusic();
+        return;
+    }
+    if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        goToMenu();
+    }
+});
+
+// ===== CLICK =====
+document.addEventListener("click", () => {
+    if (!musicStarted) {
+        activateMusic();
+        return;
+    }
+    goToMenu();
+});
+
+// ===== AL CARGAR LA PÁGINA =====
+window.addEventListener("pageshow", (event) => {
+    // Si volvemos con la flecha atrás (bfcache)
+    if (event.persisted) {
+        // Intentar reanudar la música automáticamente
+        const music = document.getElementById("introMusic");
+        if (music && !music.paused) {
+            // Ya estaba sonando, no hacer nada
+            musicStarted = true;
+        } else if (music) {
+            // Intentar reproducir (puede fallar por restricción del navegador)
+            music.volume = 0.7;
+            music.play().then(() => {
+                musicStarted = true;
+            }).catch(() => {
+                // Si falla, el usuario tendrá que presionar una tecla
+                musicStarted = false;
+            });
+        }
+    }
+});
+</script>
+
+</body>
+</html>
